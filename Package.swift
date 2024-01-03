@@ -4,20 +4,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "EmailSender",
+    name: "SwiftUIAboutView",
+    platforms: [.iOS(.v16)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "EmailSender",
-            targets: ["EmailSender"]),
+            name: "SwiftUIAboutView",
+            targets: ["SwiftUIAboutView"]),
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+         .package(url: "https://github.com/apple/swift-format.git", branch:("release/5.9")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "EmailSender"),
+            name: "SwiftUIAboutView"),
         .testTarget(
-            name: "EmailSenderTests",
-            dependencies: ["EmailSender"]),
+            name: "SwiftUIAboutViewTests",
+            dependencies: ["SwiftUIAboutView"]),
     ]
 )

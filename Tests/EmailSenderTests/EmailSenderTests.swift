@@ -1,7 +1,7 @@
 import XCTest
-@testable import EmailSender
+@testable import SwiftUIAboutView
 
-final class EmailSenderTests: XCTestCase {
+final class SwiftUIAboutViewTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

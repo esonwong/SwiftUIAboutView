@@ -14,7 +14,7 @@ public struct AboutView<Content: View>: View {
   }
 
   var appDisplayName: String {
-    return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Unknown App"
+    return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? appName
   }
 
   var appVersion: String {
@@ -66,7 +66,7 @@ public struct AboutView<Content: View>: View {
 
         if let email = email {
           LabeledContent {
-            SendEmailButton(email)
+            SendEmailButton(email, subject: "Feedback from \(appDisplayName)", message: "Hello, I have some feedback for \(appDisplayName).")
           } label: {
             HStack {
               Image(systemName: "envelope").foregroundColor(.accentColor)

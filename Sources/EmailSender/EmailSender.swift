@@ -7,9 +7,13 @@ import SwiftUI
 public struct SendEmailButton: View {
 
   public var email: String
+  public var subject: String = ""
+  public var message: String = ""
 
-  public init(_ email: String) {
+  public init(_ email: String, subject: String = "Hello", message: String = "Hello Universe!") {
     self.email = email
+    self.subject = subject
+    self.message = message
   }
 
   @State private var isShowingMailView = false
@@ -25,7 +29,7 @@ public struct SendEmailButton: View {
       .disabled(!MFMailComposeViewController.canSendMail())
     }
     .sheet(isPresented: $isShowingMailView) {
-      EmailView(email, result: self.$result)
+      EmailView(email, subject: subject, message: message, result: self.$result)
     }
   }
 }
